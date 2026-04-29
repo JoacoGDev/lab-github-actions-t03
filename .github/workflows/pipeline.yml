@@ -35,9 +35,10 @@ jobs:
 
   test-matrix:
     name: Matrix test - Node ${{ matrix.node-version }}
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
+        os: [ubuntu-latest, windows-latest]
         node-version: [18, 20, 22]
 
     steps:
